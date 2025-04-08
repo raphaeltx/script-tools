@@ -1,12 +1,11 @@
 #!/bin/bash
-# Uninstallation script
+# Uninstallation script for sh-toolkit
 
 # Exit immediately if a command exits with a non-zero status
 set -e
 
 # Define installation directories
 INSTALL_DIR="$HOME/sh-toolkit"
-ASCII_TITLES_DIR="$INSTALL_DIR/ascii_titles"
 
 # Remove the installation directory
 echo "Removing installation directories..."
@@ -19,10 +18,14 @@ sed -i '/source \$HOME\/sh-toolkit\/source_all.sh/d' ~/.bashrc
 
 # Remove INSTALL_DIR from PATH in ~/.bashrc
 echo "Removing $INSTALL_DIR from PATH in ~/.bashrc..."
-sed -i '/export PATH=\$PATH:$INSTALL_DIR/d' ~/.bashrc
+sed -i "/export PATH=\$PATH:$INSTALL_DIR/d" ~/.bashrc
+
+# Remove BASH_ENV from ~/.bashrc
+echo "Removing BASH_ENV from ~/.bashrc..."
+sed -i '/export BASH_ENV=.*sh-toolkit\/source_all.sh/d' ~/.bashrc
 
 # Reload the shell to apply changes
 echo "Reloading shell..."
 source ~/.bashrc
 
-echo "Uninstallation complete. All scripts and functions have been removed."
+echo "Uninstallation complete. All scripts, functions, and environment variables have been removed."
