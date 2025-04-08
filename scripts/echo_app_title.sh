@@ -6,8 +6,6 @@ function echo_app_title() {
     local color='\033[0;36m'
     local no_color='\033[0m'
 
-    echo "Echoing ASCII title for: $title"
-
     # Check if the title is provided
     if [[ -z "$title" ]]; then
         echo "Error: No title provided."
@@ -19,8 +17,6 @@ function echo_app_title() {
 
     # Construct the file path for the given title
     local ascii_file="${ascii_dir}/${title}_ascii_title.sh"
-
-    echo "Looking for ASCII title file: $ascii_file..."
 
     # Check if the ASCII file exists
     if [[ -f "$ascii_file" ]]; then

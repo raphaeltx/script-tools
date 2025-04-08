@@ -3,8 +3,6 @@
 
 INSTALL_DIR="$HOME/sh-toolkit"
 
-echo "Sourcing all scripts from $INSTALL_DIR..."
-
 # Function to source all .sh files in the INSTALL_DIR and its subdirectories
 source_all_scripts() {
     local dir="$1"
@@ -12,7 +10,6 @@ source_all_scripts() {
     for script in $(find "$dir" -type f -name "*.sh"); do
         # Exclude this script (source_all.sh) from being sourced
         if [[ "$script" != "$INSTALL_DIR/source_all.sh" ]]; then
-            echo "Sourcing: $script"
             source "$script"
         fi
     done
