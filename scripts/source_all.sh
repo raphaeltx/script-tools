@@ -15,6 +15,14 @@ source_all_scripts() {
     done
 }
 
+# Function to export all functions to make them available in non-interactive shells
+export_all_functions() {
+    echo "Exporting all functions..."
+    declare -F | awk '{print $3}' | while read -r func; do
+        export -f "$func"
+    done
+}
+
 # Function to add INSTALL_DIR to PATH if not already present
 add_install_dir_to_path() {
     if ! echo "$PATH" | grep -q "$INSTALL_DIR"; then
@@ -25,6 +33,9 @@ add_install_dir_to_path() {
 
 # Source all scripts
 source_all_scripts "$INSTALL_DIR"
+
+# Export all functions
+export_all_functions
 
 # Add INSTALL_DIR to PATH
 add_install_dir_to_path

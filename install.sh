@@ -37,6 +37,11 @@ add_source_to_bashrc() {
         echo -e "\n# Source all scripts from sh-toolkit" >> ~/.bashrc
         echo "source \$HOME/sh-toolkit/source_all.sh" >> ~/.bashrc
     fi
+
+    echo "Adding BASH_ENV to ~/.bashrc for non-interactive shells..."
+    if ! grep -q "export BASH_ENV=" ~/.bashrc; then
+        echo "export BASH_ENV=\"$HOME/sh-toolkit/source_all.sh\"" >> ~/.bashrc
+    fi
 }
 
 # Function to source source_all.sh directly
@@ -58,6 +63,7 @@ main() {
     chmod +x "$INSTALL_DIR/source_all.sh"
     add_source_to_bashrc
     source_scripts
+    reload_bashrc
     echo "Installation complete. All functions and scripts are now globally available."
 }
 
