@@ -5,7 +5,7 @@
 set -e
 
 # Define installation directories
-INSTALL_DIR="$HOME/sh-toolkit-tools"
+INSTALL_DIR="$HOME/sh-toolkit"
 ASCII_TITLES_DIR="$INSTALL_DIR/ascii_titles"
 
 # Function to create necessary directories
@@ -33,9 +33,9 @@ make_scripts_executable() {
 # Function to add sourcing of source_all.sh to ~/.bashrc
 add_source_to_bashrc() {
     echo "Adding sourcing of source_all.sh to ~/.bashrc..."
-    if ! grep -q "# Source all scripts from sh-toolkit-tools" ~/.bashrc; then
-        echo -e "\n# Source all scripts from sh-toolkit-tools" >> ~/.bashrc
-        echo "source \$HOME/sh-toolkit-tools/source_all.sh" >> ~/.bashrc
+    if ! grep -q "# Source all scripts from sh-toolkit" ~/.bashrc; then
+        echo -e "\n# Source all scripts from sh-toolkit" >> ~/.bashrc
+        echo "source \$HOME/sh-toolkit/source_all.sh" >> ~/.bashrc
     fi
 }
 

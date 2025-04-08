@@ -1,7 +1,7 @@
 #!/bin/bash
-# Script to source all scripts and files in the sh-toolkit-tools directory and its subdirectories
+# Script to source all scripts and files in the sh-toolkit directory and its subdirectories
 
-INSTALL_DIR="$HOME/sh-toolkit-tools"
+INSTALL_DIR="$HOME/sh-toolkit"
 
 echo "Sourcing all scripts from $INSTALL_DIR..."
 

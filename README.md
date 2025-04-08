@@ -6,8 +6,8 @@ A collection of utility scripts and ASCII title tools for enhancing shell experi
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url> ~/workspace/sh-toolkit-tools
-   cd ~/workspace/sh-toolkit-tools
+   git clone <repository-url> ~/workspace/sh-toolkit
+   cd ~/workspace/sh-toolkit
 
 2. Run the installation script:
     ```bash

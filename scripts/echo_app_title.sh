@@ -15,7 +15,7 @@ function echo_app_title() {
     fi
 
     # Define the directory where ASCII title files are stored
-    local ascii_dir="$HOME/sh-toolkit-tools/ascii_titles"
+    local ascii_dir="$HOME/sh-toolkit/ascii_titles"
 
     # Construct the file path for the given title
     local ascii_file="${ascii_dir}/${title}_ascii_title.sh"
