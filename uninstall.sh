@@ -5,7 +5,7 @@
 set -e
 
 # Define installation directories
-INSTALL_DIR="$HOME/script-tools"
+INSTALL_DIR="$HOME/sh-toolkit-tools"
 ASCII_TITLES_DIR="$INSTALL_DIR/ascii_titles"
 
 # Remove the installation directory
@@ -14,8 +14,8 @@ rm -rf "$INSTALL_DIR"
 
 # Remove sourcing of source_all.sh from ~/.bashrc
 echo "Removing sourcing of scripts from ~/.bashrc..."
-sed -i '/# Source all scripts from script-tools/d' ~/.bashrc
-sed -i '/source \$HOME\/script-tools\/source_all.sh/d' ~/.bashrc
+sed -i '/# Source all scripts from sh-toolkit-tools/d' ~/.bashrc
+sed -i '/source \$HOME\/sh-toolkit-tools\/source_all.sh/d' ~/.bashrc
 
 # Remove INSTALL_DIR from PATH in ~/.bashrc
 echo "Removing $INSTALL_DIR from PATH in ~/.bashrc..."
